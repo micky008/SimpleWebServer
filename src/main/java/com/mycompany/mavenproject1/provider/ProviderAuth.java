@@ -1,6 +1,6 @@
 package com.mycompany.mavenproject1.provider;
 
-import com.mycompany.mavenproject1.dao.DAOFactory;
+import com.mycompany.mavenproject1.dao.FactoryDAO;
 import com.mycompany.mavenproject1.entity.User;
 import java.io.IOException;
 import java.util.Base64;
@@ -58,7 +58,7 @@ public class ProviderAuth implements javax.ws.rs.container.ContainerRequestFilte
         System.out.println(password);
         
         
-        User u = DAOFactory.getUserDAO().getUserByLoginPassword(username, password);
+        User u = FactoryDAO.getUserDAO().getUserByLoginPassword(username, password);
         
         if (u == null){
             requestContext.abortWith(Response.status(Response.Status.FORBIDDEN).entity("Access blocked for all users !!").build());                   

@@ -16,5 +16,6 @@ public interface UserDAO {
     
     List<User> getUsers();
     User getUserByLoginPassword(String login, String password);
+    Integer insertUser(User newUser);
     
 }

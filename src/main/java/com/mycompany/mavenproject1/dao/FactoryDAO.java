@@ -9,11 +9,15 @@ package com.mycompany.mavenproject1.dao;
  *
  * @author local
  */
-public class DAOFactory {
- 
-    
+public class FactoryDAO {
+
+    private static UserDAO udao = new UserDAOMariaDbImpl();
+
     public static UserDAO getUserDAO() {
-        return new UserDAOMOOCImpl();
+        return udao;
     }
-    
+
+    public static void init() {
+        HibernateConfiguration.setUp();
+    }
 }
