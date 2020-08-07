@@ -19,7 +19,7 @@ public class NewMain {
      */
     public static void main(String[] args) {
         URI baseUri = UriBuilder.fromUri("http://localhost/").port(9998).build();
-        ResourceConfig config = new ResourceConfig(UserController.class, ProviderAuth.class);        
+        ResourceConfig config = new ResourceConfig(UserController.class);//, ProviderAuth.class);        
         HttpServer server = JdkHttpServerFactory.createHttpServer(baseUri, config);
 
     }
